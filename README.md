@@ -15,9 +15,9 @@ go get github.com/jniltinho/golp
 ```
 Usage of gozip:
 package main
-import ("github.com/jniltinho/golp")
+import ("github.com/jniltinho/golp/gozip")
 
-golp.Unzip("filename.zip", "filename_folder")
+gozip.Unzip("filename.zip", "filename_folder")
 ```
 
 
