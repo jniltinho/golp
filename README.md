@@ -12,7 +12,7 @@ go get github.com/jniltinho/golp
 
 ## Usage lib for Unzip File
 
-```
+```go
 Usage of gozip:
 package main
 import ("github.com/jniltinho/golp/gozip")
