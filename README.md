@@ -20,4 +20,9 @@ import ("github.com/jniltinho/golp/gozip")
 gozip.Unzip("filename.zip", "filename_folder")
 ```
 
+## Tools and Libs
+
+https://github.com/vaughan0/go-ini
+https://github.com/sanderhahn/gozip
+https://github.com/nareix/curl
 
