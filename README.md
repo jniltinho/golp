@@ -10,7 +10,7 @@ The `gozip` command can be used to add zipped content to your binary.
 go get github.com/jniltinho/golp
 ```
 
-## Usage
+## Usage lib for Unzip File
 
 ```
 Usage of gozip:
@@ -22,7 +22,15 @@ gozip.Unzip("filename.zip", "filename_folder")
 
 ## Tools and Libs
 
-https://github.com/vaughan0/go-ini
-https://github.com/sanderhahn/gozip
-https://github.com/nareix/curl
+- [Vaughan0](https://github.com/vaughan0/go-ini)
+- [Sanderhahn](https://github.com/sanderhahn/gozip)
+- [Nareix](https://github.com/nareix/curl)
+- [PuerkitoBio](https://github.com/PuerkitoBio/goquery)
+- [Avelino](https://github.com/avelino/awesome-go)
+- [Awesome-Go](http://awesome-go.com/)
+
+
+
+
+
 
