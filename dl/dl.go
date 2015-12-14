@@ -11,7 +11,7 @@ import (
 func DownloadFile(url string, fileName string, verbose bool) {
 	req := curl.New(url)
 
-	req.Method("POST")
+	req.Method("GET")
 	req.SaveToFile(fileName)
 
 	// Print progress status per one second
