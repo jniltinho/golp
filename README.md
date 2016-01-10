@@ -6,7 +6,7 @@ Tools and Lib for DevOps and Sysadmin (www.linuxpro.com.br -> LP)
 
 The `gozip` command can be used to add zipped content to your binary.
 
-```bash
+```go
 go get github.com/jniltinho/golp
 ```
 
