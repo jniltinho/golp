@@ -20,7 +20,19 @@ import (
     "github.com/jniltinho/golp/gozip"
 )
 
-gozip.Unzip("filename.zip", "filename_folder")
+
+func main() {
+
+	println("Create Gzip File ....")
+	gozip.Gzip("/home/linuxpro/source_file.pdf")
+	
+	println("Unzip File Zipe ....")
+	gozip.Unzip("filename.zip", "filename_folder")
+
+}
+
+
+
 ```
 
 ## Tools and Libs
