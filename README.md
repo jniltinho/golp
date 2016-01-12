@@ -26,7 +26,7 @@ func main() {
 	println("Create Gzip File ....")
 	gozip.Gzip("/home/linuxpro/source_file.pdf")
 	
-	println("Unzip File Zipe ....")
+	println("Unzip File Zip ....")
 	gozip.Unzip("filename.zip", "filename_folder")
 
 }
