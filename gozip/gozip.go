@@ -2,9 +2,13 @@ package gozip
 
 import (
 	"archive/zip"
+	"bufio"
+	"bytes"
+	"compress/gzip"
 	"errors"
 	"io"
 	"io/ioutil"
+	"log"
 	"os"
 	"path"
 	"path/filepath"
@@ -17,6 +21,58 @@ func IsZip(path string) bool {
 		return true
 	}
 	return false
+}
+
+func String2Gzip(destfile, message string) bool {
+	var buf bytes.Buffer
+	gz := gzip.NewWriter(&buf)
+	gz.Write([]byte(message))
+	gz.Close()
+	ioutil.WriteFile(destfile+".gz", buf.Bytes(), 0666)
+
+	return true
+}
+
+func Gzip(sourcefile string) bool {
+	filename := sourcefile
+
+	rawfile, err := os.Open(filename)
+
+	if err != nil {
+		log.Println(err)
+		return false
+	}
+	defer rawfile.Close()
+
+	// calculate the buffer size for rawfile
+	info, _ := rawfile.Stat()
+
+	var size int64 = info.Size()
+	rawbytes := make([]byte, size)
+
+	// read rawfile content into buffer
+	buffer := bufio.NewReader(rawfile)
+	_, err = buffer.Read(rawbytes)
+
+	if err != nil {
+		log.Println(err)
+		return false
+	}
+
+	var buf bytes.Buffer
+	writer := gzip.NewWriter(&buf)
+	writer.Write(rawbytes)
+	writer.Close()
+
+	err = ioutil.WriteFile(filename+".gz", buf.Bytes(), info.Mode())
+	// use 0666 to replace info.Mode() if you prefer
+
+	if err != nil {
+		log.Println(err)
+		return false
+	}
+
+	return true
 }
 
 func Zip(path string, dirs []string) (err error) {
