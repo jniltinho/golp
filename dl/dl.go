@@ -34,7 +34,7 @@ func DownloadFromUrl(url string, verbose bool) {
 	fileName := tokens[len(tokens)-1]
 	req := curl.New(url)
 
-	req.Method("POST")
+	req.Method("GET")
 	req.SaveToFile(fileName)
 
 	// Print progress status per one second
